@@ -99,23 +99,4 @@ public class UserServiceImp implements UserService, UserDetailsService {
             return password;
         }
     }
-
-    // Создаем пользователя админ и юзер если еще не созданы
-    // Админ имеет две роли и доступ ко всему
-    // У юзера одна роль и ограниченость в доступе
-    @Transactional
-    @Override
-    public void addAdminAndUserPanel() {
-        if (!dao.isNotReg("admin@mail.com")) {
-
-            Set<Role> admin = new HashSet<>();
-            admin.add(new Role("ADMIN"));
-            admin.add(new Role("USER"));
-            dao.addUser(new User("Брюс", "admin", "Уэйн", "admin@mail.com", 30, admin));
-
-            Set<Role> user = new HashSet<>();
-            user.add(new Role("ADMIN"));
-            dao.addUser(new User("Джокер", "user", "Напьер", "user@mail.com", 28, user));
-        }
-    }
 }

@@ -11,12 +11,9 @@ import javax.servlet.http.HttpSession;
 @org.springframework.stereotype.Controller
 public class UserController {
 
-    @Autowired
-    UserService userService;
 
     @RequestMapping(value = "/*", method = RequestMethod.GET)
     public String loginPage() {
-        userService.addAdminAndUserPanel();
         return "login";
     }
     @RequestMapping(value = "/panel", method = RequestMethod.GET)

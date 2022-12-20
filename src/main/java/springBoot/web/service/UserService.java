@@ -17,8 +17,6 @@ public interface UserService {
 
     public User getUserById(long id);
 
-    public void addAdminAndUserPanel();
-
     public String ifPasswordNull(Long id, String password);
 
     public Set<Role> getRoleForUser(String role);

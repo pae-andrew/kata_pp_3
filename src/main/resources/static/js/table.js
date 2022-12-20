@@ -5,7 +5,7 @@ function getAllUsers() {
     $("#table").empty();
     $.ajax({
         type: 'POST',
-        url: '/api/admin/users',
+        url: '/admin/users',
         timeout: 3000,
         success: function (data) {
             console.log(data);
@@ -56,7 +56,7 @@ $(document).on("click", ".editUser", function () {
     let formData = $(".formEditUser").serializeArray();
     $.ajax({
         type: 'POST',
-        url: '/api/admin/update',
+        url: '/admin/update',
         data: formData,
         timeout: 100,
         success: function () {
@@ -78,7 +78,7 @@ $(document).on("click", ".delete", function () {
     $(document).on("click", ".deleteUser", function () {
         $.ajax({
             type: 'POST',
-            url: '/api/admin/remove',
+            url: '/admin/remove',
             data: {id: $('#id').val()},
             timeout: 100,
             success: function () {
@@ -94,7 +94,7 @@ $('.addUser').click(function () {
     let formData = $(".formAddUser").serializeArray();
     $.ajax({
         type: 'POST',
-        url: '/api/admin/addUser',
+        url: '/admin/addUser',
         data: formData,
         timeout: 100,
         success: function () {
@@ -111,7 +111,7 @@ function getUser() {
     $("#userTable").empty();
     $.ajax({
         type: 'POST',
-        url: '/api/user/getUser',
+        url: 'user/getUser',
         timeout: 3000,
         error: function() {
             $('#blockMenuforUser').hide();
