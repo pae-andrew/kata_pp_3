@@ -20,6 +20,5 @@ public interface UserDao {
     public User getUserById(long id);
 
     public User getUserByName(String name);
-
 }
 

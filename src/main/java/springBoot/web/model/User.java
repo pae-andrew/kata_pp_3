@@ -28,10 +28,7 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Role> roles;
 
-
-    public User() {
-
-    }
+    public User() {}
 
     public User( String firstName, String password, String lastName, String email, int age) {
         this.firstName = firstName;
@@ -69,7 +66,6 @@ public class User implements UserDetails {
 
     }
 
-
     public String getRoles() {
         return roles.toString().replaceAll("\\p{P}", "");
     }
@@ -90,11 +86,9 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
 
     public String getLastName() {
         return lastName;
@@ -153,6 +147,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 
 }
