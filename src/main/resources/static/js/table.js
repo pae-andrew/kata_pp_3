@@ -4,7 +4,7 @@ $(document).ready(getAllUsers());
 function getAllUsers() {
     $("#table").empty();
     $.ajax({
-        type: 'POST',
+        type: 'GET',
         url: 'api/admin/users',
         timeout: 3000,
         success: function (data) {
@@ -55,7 +55,7 @@ $(document).on("click", ".edit", function () {
 $(document).on("click", ".editUser", function () {
     let formData = $(".formEditUser").serializeArray();
     $.ajax({
-        type: 'POST',
+        type: 'PUT',
         url: 'api/admin/update',
         data: formData,
         timeout: 100,
@@ -77,7 +77,7 @@ $(document).on("click", ".delete", function () {
 
     $(document).on("click", ".deleteUser", function () {
         $.ajax({
-            type: 'POST',
+            type: 'DELETE',
             url: 'api/admin/remove',
             data: {id: $('#id').val()},
             timeout: 100,
@@ -110,7 +110,7 @@ $(document).ready(getUser());
 function getUser() {
     $("#userTable").empty();
     $.ajax({
-        type: 'POST',
+        type: 'GET',
         url: 'api/user/getUser',
         timeout: 3000,
         error: function() {

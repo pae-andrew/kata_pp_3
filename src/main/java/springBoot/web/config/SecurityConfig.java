@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // Указываем параметры логина и пароля с формы логина
                 .usernameParameter("j_username")
                 .passwordParameter("j_password")
-                // даем доступ к форме логина всем
+//                 даем доступ к форме логина всем
                 .permitAll();
 
         http.logout()
