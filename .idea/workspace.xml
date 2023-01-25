@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ed14132-2c24-40ec-8a8f-22838690c31b" name="Changes" comment="Fix">
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springBoot/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springBoot/web/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springBoot/web/controller/RestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springBoot/web/controller/RestUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springBoot/web/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springBoot/web/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springBoot/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springBoot/web/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/table.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +113,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671971117575</updated>
-      <workItem from="1671971118909" duration="31167000" />
+      <workItem from="1671971118909" duration="39638000" />
     </task>
     <task id="LOCAL-00001" summary="Fix">
       <created>1671980679496</created>
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671980679496</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix">
+      <created>1674588406426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674588406426</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

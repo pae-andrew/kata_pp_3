@@ -8,6 +8,7 @@ function getAllUsers() {
         url: 'api/admin/users',
         timeout: 3000,
         success: function (data) {
+            console.info("${user.roles}");
             console.log(data);
             $.each(data, function (i, user) {
                 $("#table").append($('<tr>').append(
@@ -104,38 +105,3 @@ $('.addUser').click(function () {
         }
     })
 });
-
-//Для отображения информаций о пользователе на его странице и сокрытия меню в зависимости от роли
-$(document).ready(getUser());
-function getUser() {
-    $("#userTable").empty();
-    $.ajax({
-        type: 'GET',
-        url: 'api/user/getUser',
-        timeout: 3000,
-        error: function() {
-            $('#blockMenuforUser').hide();
-        },
-        success: function (data) {
-            console.log(data);
-            $.each(data, function (i, user) {
-                if(user.roles == "USER") {
-                    $('#menuUser').trigger('click');
-                    $('#main2').trigger('click');
-                    $('#blockMenuforAdmin').hide();
-                }
-                $("#userTable").append($('<tr>').append(
-                    $('<td>').append($('<span>')).text(user.id),
-                    $('<td>').append($('<span>')).text(user.username),
-                    $('<td>').append($('<span>')).text(user.lastName),
-                    $('<td>').append($('<span>')).text(user.age),
-                    $('<td>').append($('<span>')).text(user.email),
-                    $('<td>').append($('<span>')).text(user.roles),
-                    )
-                );
-            });
-        }
-    });
-}
-
-

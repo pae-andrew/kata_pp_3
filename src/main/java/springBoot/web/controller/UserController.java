@@ -1,10 +1,7 @@
 package springBoot.web.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import springBoot.web.service.UserService;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,11 +9,11 @@ import javax.servlet.http.HttpSession;
 public class UserController {
 
 
-    @RequestMapping(value = "/*", method = RequestMethod.GET)
+    @GetMapping(value = "/*")
     public String loginPage() {
         return "login";
     }
-    @RequestMapping(value = "/panel", method = RequestMethod.GET)
+    @GetMapping(value = "/panel")
     public String getTable(Model model, HttpSession session) {
         model.addAttribute("user", session.getAttribute("user"));
         return "table";
