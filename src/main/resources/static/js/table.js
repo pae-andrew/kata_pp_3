@@ -8,8 +8,12 @@ function getAllUsers() {
         url: 'api/admin/users',
         timeout: 3000,
         success: function (data) {
-            console.info("${user.roles}");
-            console.log(data);
+            if(!data[0].roles.includes("ADMIN")) {
+                $('#menuUser').trigger('click');
+                $('#main2').trigger('click');
+                $('#blockMenuforAdmin').hide();
+            }
+            data.splice(0, 1);
             $.each(data, function (i, user) {
                 $("#table").append($('<tr>').append(
                     $('<td>').append($('<span>')).text(user.id),

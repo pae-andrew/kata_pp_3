@@ -4,10 +4,13 @@ package springBoot.web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import springBoot.web.model.User;
 import springBoot.web.service.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,8 +23,12 @@ public class RestUserController {
 
     @GetMapping(value = "users")
     public ResponseEntity<List<User>> getAllUsers() {
-
-        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        System.out.println(user.getRoles());
+        List<User> users = new ArrayList<>();
+        users.add(user);
+        users.addAll(userService.getAllUsers());
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @DeleteMapping(value = "remove")
