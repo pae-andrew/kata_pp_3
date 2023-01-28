@@ -2,7 +2,6 @@ package springBoot.web.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,23 +20,21 @@ public class RestUserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = "users")
-    public ResponseEntity<List<User>> getAllUsers() {
-        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        System.out.println(user.getRoles());
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers(@AuthenticationPrincipal User user) {
         List<User> users = new ArrayList<>();
         users.add(user);
         users.addAll(userService.getAllUsers());
-        return new ResponseEntity<>(users, HttpStatus.OK);
+        return ResponseEntity.ok(users);
     }
 
-    @DeleteMapping(value = "remove")
+    @DeleteMapping
     public ResponseEntity<List<?>> removeUser(@RequestParam Long id) {
         userService.removeUser(id);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping(value = "update")
+    @PutMapping
     public ResponseEntity<List<?>> updateUser(@RequestParam Long id, String firstName,
                                               String password, String lastName,
                                               String email, int age, String role) {
@@ -47,7 +44,7 @@ public class RestUserController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping(value = "addUser")
+    @PostMapping
     public ResponseEntity<List<?>> addUser(@RequestParam String firstName,
                                            String password, String lastName,
                                            String email, int age, String role) {

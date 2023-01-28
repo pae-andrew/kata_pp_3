@@ -5,7 +5,7 @@ function getAllUsers() {
     $("#table").empty();
     $.ajax({
         type: 'GET',
-        url: 'api/admin/users',
+        url: 'api/admin',
         timeout: 3000,
         success: function (data) {
             if(!data[0].roles.includes("ADMIN")) {
@@ -61,7 +61,7 @@ $(document).on("click", ".editUser", function () {
     let formData = $(".formEditUser").serializeArray();
     $.ajax({
         type: 'PUT',
-        url: 'api/admin/update',
+        url: 'api/admin',
         data: formData,
         timeout: 100,
         success: function () {
@@ -83,7 +83,7 @@ $(document).on("click", ".delete", function () {
     $(document).on("click", ".deleteUser", function () {
         $.ajax({
             type: 'DELETE',
-            url: 'api/admin/remove',
+            url: 'api/admin',
             data: {id: $('#id').val()},
             timeout: 100,
             success: function () {
@@ -99,7 +99,7 @@ $('.addUser').click(function () {
     let formData = $(".formAddUser").serializeArray();
     $.ajax({
         type: 'POST',
-        url: 'api/admin/addUser',
+        url: 'api/admin',
         data: formData,
         timeout: 100,
         success: function () {
